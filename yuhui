@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>于慧自测（手机WEB）</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link href="css/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet"/>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            position: relative;
+            top: 70px;
+        }
+
+        .container {
+            padding-right: 15px;
+            padding-left: 15px;
+            margin-right: auto;
+            margin-left: auto;
+            position: relative;
+            top: 25px;
+        }
+
+        .cla1 {
+            border: 3px solid white;
+            border-radius: 10%;
+            /*ff*/
+            width: 100%;
+            height: 300px;
+            position: relative;
+            top:10px;
+        }
+
+        .cla2 {
+            border: 0px;
+            width: 100%;
+            height: 40px;
+            font: normal bold 43px kaiti;
+            color: #248f2d;
+            /*ff*/
+            position: relative;
+            left: 16%;
+        }
+
+        font {
+            text-align: left;
+            font-size: 28px;
+            font-family: "kaiti";
+            color: #c3673F;
+            font-weight: bold;
+        }
+
+        .font2 {
+            font-size: 23px;
+        }
+
+        .TRear {
+            background: transparent;
+            font-size: 32px;
+            color: #8B6914;
+            border-radius: 10%;
+            border-color: white;
+            width: 100%;
+            height: 30px;
+        }
+
+        .btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 15%;
+            border: 2px, solid;
+        }
+
+        .btn2 {
+            width: 100px;
+            height: 50px;
+            border-radius: 15%;
+            border: 2px, solid;
+        }
+        hr{
+            color: black;
+        }
+    </style>
+</head>
+
+<body translate="no" scroll="no" style="overflow: hidden" background="images/5.png">
+    <div class="container">
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h1 class="cla2">于慧自测系统</h1>
+                    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2">
+                        <form method="post">
+                            <table border="0">
+                                <tr>
+                                    <td>
+                                        <table class="cla1">
+                                            <tr height="180">
+                                                <td align="center">
+                                                    <font>题 目:</font>
+                                                    <input class="TRear" type="text" id="topic" required="required">
+                                                    <br>
+                                                    <br>
+                                                    <font>答 案:</font>
+                                                    <input class="TRear" type="text" id="answer" required="required">
+                                                    <br>
+                                                    <br>
+                                                    <font>选 项:</font>
+                                                    <div class="font2">
+                                                        <button class="btn" type="button" name="A" id="btna">
+                                                            <font>A</font>
+                                                        </button>&nbsp;&nbsp;
+                                                        <button class="btn" type="button" name="B" id="btnb">
+                                                            <font>B</font>
+                                                        </button>&nbsp;&nbsp;
+                                                        <button class="btn" type="button" name="C" id="btnc">
+                                                            <font>C</font>
+                                                        </button>&nbsp;&nbsp;
+                                                        <button class="btn" type="button" name="D" id="btnd">
+                                                            <font>D</font>
+                                                        </button>
+                                                    </div>
+                                                    <br>
+                                                        <button class="btn2" type="submit" name="confirm" id="confirm">
+                                                        <font>确 认</font></button>&nbsp;&nbsp;&nbsp;
+                                                        <button class="btn2" type="reset" name="cancel" id="cancel">
+                                                        <font>取 消</font></button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="lib/jquery.min.js"></script>
+    <script type="text/javascript" src="css/bootstrap/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById("btna").onclick = function () {
+            document.getElementById("answer").value = document.getElementById("answer").value + "A";
+        }
+        document.getElementById("btnb").onclick = function () {
+            document.getElementById("answer").value = document.getElementById("answer").value + "B";
+        }
+        document.getElementById("btnc").onclick = function () {
+            document.getElementById("answer").value = document.getElementById("answer").value + "C";
+        }
+        document.getElementById("btnd").onclick = function () {
+            document.getElementById("answer").value = document.getElementById("answer").value + "D";
+        }
+        document.getElementById("confirm").onclick = function () {
+            /*拿到答案框，题号框的输入值，以及定义的答案数组*/
+            var answerObj = document.getElementById("answer").value;
+            var num = document.getElementById("topic").value;
+            var answer = new Array('DBDCA', 'CDBAD', 'ACDBA', 'CABDB', 'CBDDA', 'BCBAD', 'BACDB', 'ABBAD', 'CDCBA', 'CABDC', 'CADBC', 'ADCBD',
+                'DABAC', 'CADBC', 'CBACB', 'CDADB', 'ACDDA', 'BDABC', 'CACDB', 'ABCDD', 'CACDB', 'DBDBA', 'CBADC', 'DCAAB', 'CBDCB', 'DABAD', 'ADCBD',
+                'DCAAB', 'ACBDC', 'DBCAB', 'CDADA', 'ACDAB', 'DBBCC', 'BBDAC', 'BADAB', 'CDCBA', 'BDACC', 'ADCBD', 'CBDBA', 'BDCAC', 'DCBAA', 'CDADB',
+                'DBACD', 'CDADA', 'ABBDC', 'CDBCA', 'DBACC', 'ADCBD', 'BBDAC', 'ACBAD', 'BCAAD', 'CDABB', 'DDDAD', 'CBACA', 'BCBB', 'ACDA', 'ACBB', 'ACAD',
+                'DBAB', 'BADA', 'DABA', 'DBBA', 'DACB', 'DAAB', 'CDBA', 'CDDC', 'ABBA', 'CDAA', 'BCDC', 'BBDC', 'BCAD', 'BDCA', 'BCDA', 'ABDA', 'CDBA', 'CBAD',
+                'BACD', 'BDCA', 'ACDB', 'DBAC', 'CADA', 'BDCA', 'CADB', 'BBCD', 'ACABD', 'ABACC', 'CBBCD', 'DDBDA', 'ADBCD', 'ACCBD', 'AABCB', 'BCADC', 'BADBC',
+                'ACBAD', 'BADDC', 'DACCB', 'BCDAD', 'DCBAC', 'DBBAA', 'ACCDB');
+            /*根据输入题号作为数组的下标拿值*/
+            var num2 = num - 1;
+            var item = answer[num2];
+            // alert(answerObj.charAt(1));
+            //alert(item.charAt(2));
+            //alert(item.length);
+            var same = 0;
+            var i, k;
+            // /*for循环拿到相同值的个数*/
+            for (i = 0; i < item.length; i++) {
+                var a = item.charAt(i);
+                k = i;
+                if (a == answerObj.charAt(k)) {
+                    same++;
+                } else {
+
+                }
+            }
+
+            if (num <= 54 || num >= 85) {
+                if (answerObj.length != 5) {
+                    alert("你此次输入的选项个数不对哈~");
+                } else {
+                    var p = same;
+                    var f = 5 - p;
+                    alert("你答对了" + p + "道题，答错了" + f + "道题，继续加油！");
+                }
+            }
+            else {
+                if (answerObj.length != 4) {
+                    alert("你此次输入的选项个数不对哈~");
+                } else {
+                    var p = same;
+                    var f = 4 - p;
+                    alert("你答对了" + p + "道题，答错了" + f + "道题，继续加油！");
+                }
+            }
+
+
+        }
+        document.getElementById("cancel").onclick = function () {
+            document.getElementById("topic").innerText = "";
+            document.getElementById("answer").value = "";
+        }
+        function appendText() {
+
+        }
+
+    </script>
+</body>
+
+</html>
